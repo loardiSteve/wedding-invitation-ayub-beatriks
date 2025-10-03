@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayub & Beatriks - Wedding Invitation</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Join us as Ayub Nowoeko and Beatriks Yarangga celebrate their wedding on November 29, 2025" />
+    <meta
+      name="keywords"
+      content="wedding, invitation, Ayub Nowoeko, Beatriks Yarangga, November 2025" />
+    <meta property="og:title" content="Ayub & Beatriks - Wedding Invitation" />
+    <meta
+      property="og:description"
+      content="Join us as we celebrate our special day on November 29, 2025" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/images/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body
+    class="font-inter bg-cream text-brown-800 transition-colors duration-300 overflow-hidden">
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-cream opacity-100 transition-opacity duration-1000">
+      <div class="text-center">
+        <div class="text-6xl font-playfair text-gold mb-4 animate-pulse">
+          AYUB & BEATRIKS
+        </div>
+        <div class="w-16 h-1 bg-gold mx-auto animate-pulse"></div>
+      </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+      <source src="./assets/audio/wedding-music.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-40 bg-cream/80 backdrop-blur-md shadow-sm transition-all duration-300">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="font-playfair text-xl font-semibold text-gold">
+            Ayub & Beatriks
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-brown-600 hover:text-gold transition-colors duration-300 font-medium"
+              >Home</a
+            >
+            <a
+              href="#couple"
+              class="nav-link text-brown-600 hover:text-gold transition-colors duration-300 font-medium"
+              >Couple</a
+            >
+            <a
+              href="#gallery"
+              class="nav-link text-brown-600 hover:text-gold transition-colors duration-300 font-medium"
+              >Gallery</a
+            >
+            <a
+              href="#details"
+              class="nav-link text-brown-600 hover:text-gold transition-colors duration-300 font-medium"
+              >Details</a
+            >
+            <a
+              href="#rsvp"
+              class="nav-link text-brown-600 hover:text-gold transition-colors duration-300 font-medium"
+              >RSVP</a
+            >
+            <a
+              href="#wishes"
+              class="nav-link text-brown-600 hover:text-gold transition-colors duration-300 font-medium"
+              >Wishes</a
+            >
+          </div>
+          <div class="flex items-center space-x-4">
+            <button
+              type="button"
+              id="musicToggle"
+              class="p-2 rounded-full bg-gold/20 hover:bg-gold/30 transition-colors"
+              title="Toggle background music">
+              <i class="fas fa-music text-gold"></i>
+            </button>
+            <button
+              type="button"
+              title="Toggle theme "
+              id="themeToggle"
+              class="p-2 rounded-full bg-gold/20 hover:bg-gold/30 transition-colors">
+              <i class="fas fa-moon text-gold"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Opening Invitation Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center relative overflow-hidden snap-start">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-cream via-blush/20 to-gold/10"></div>
+        <div
+          id="envelope"
+          class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+          <div class="envelope-container">
+            <div class="envelope">
+              <div class="envelope-flap"></div>
+              <div class="envelope-body">
+                <div
+                  class="invitation-content py-8 px-8 pb-4 md:p-8 transition-all duration-1000 opacity-0">
+                  <h1
+                    class="font-playfair text-xl md:text-4xl md:mb-4 font-bold text-brown-800">
+                    Ayub & Beatriks
+                  </h1>
+                  <div class="w-24 h-1 bg-gold mx-auto mb-4"></div>
+                  <p class="text-lg md:text-xl text-brown-600 mb-4">
+                    Kami senang mengundang anda dan keluarga untuk menghadiri
+                    acara pernikahan kami.
+                  </p>
+                  <div
+                    class="text-2xl md:text-3xl font-playfair text-gold mb-8">
+                    November 29, 2025
+                  </div>
+                </div>
+              </div>
+              <div class="w-full text-center absolute bottom-10 z-10">
+                <button
+                  type="button"
+                  id="openInvitation"
+                  class="btn-primary border border-gold hover:bg-gold/90 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 z-10">
+                  Buka Undangan
+                </button>
+              </div>
+              <div class="envelope-lift-effect"></div>
+              <div
+                id="scrollDownIndicator"
+                class="scroll-down-indicator absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-center opacity-0 transition-opacity duration-500">
+                <div class="scroll-down-btn">
+                  <i class="fas fa-chevron-down text-2xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bride and Groom Section -->
+      <section id="couple" class="py-20 snap-start">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2
+              class="font-playfair text-4xl md:text-5xl font-bold text-brown-800 mb-4">
+              Calon Pengantin
+            </h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <!-- Groom -->
+            <div class="text-center animate-fade-in">
+              <div
+                class="w-64 h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/30">
+                <img
+                  src="#"
+                  alt="Ayub Nowoeko"
+                  class="w-full h-full object-cover" />
+              </div>
+              <h3
+                class="font-playfair text-3xl font-semibold text-brown-800 mb-2">
+                Ayub Nowoeko
+              </h3>
+              <div class="w-16 h-1 bg-gold mx-auto mb-4"></div>
+              <p class="text-brown-600 leading-relaxed">
+                Son of [Father's Name] & [Mother's Name]
+              </p>
+              <p class="text-brown-600 mt-4 italic">
+                "Love is not about finding the perfect person, but learning to
+                see an imperfect person perfectly."
+              </p>
+            </div>
+
+            <!-- Bride -->
+            <div class="text-center animate-fade-in">
+              <div
+                class="w-64 h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/30">
+                <img
+                  src="#"
+                  alt="Beatriks Yarangga"
+                  class="w-full h-full object-cover" />
+              </div>
+              <h3
+                class="font-playfair text-3xl font-semibold text-brown-800 mb-2">
+                Beatriks Yarangga
+              </h3>
+              <div class="w-16 h-1 bg-gold mx-auto mb-4"></div>
+              <p class="text-brown-600 leading-relaxed">
+                Daughter of [Father's Name] & [Mother's Name]
+              </p>
+              <p class="text-brown-600 mt-4 italic">
+                "In all the world, there is no heart for me like yours. In all
+                the world, there is no love for you like mine."
+              </p>
+            </div>
+          </div>
+
+          <!-- Love Story -->
+          <div class="mt-20 max-w-4xl mx-auto text-center">
+            <!-- <h3
+              class="font-playfair text-3xl font-semibold text-brown-800 mb-8">
+              Our Love Story
+            </h3> -->
+            <div class="bg-white/50 rounded-lg p-8 shadow-lg">
+              <p class="text-brown-700 leading-relaxed text-lg text-pretty">
+                Allah berkata, 'Karena itu seorang pria akan meninggalkan ayah
+                dan ibunya dan akan terus bersama istrinya, dan keduanya akan
+                menjadi satu.' - Matius 19 : 5
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photo Gallery Section -->
+      <section id="gallery" class="py-20 bg-white/30 snap-start">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2
+              class="font-playfair text-4xl md:text-5xl font-bold text-brown-800 mb-4">
+              Galeri Kami
+            </h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+          </div>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 1" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 2" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 3" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 4" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 5" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 6" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 7" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
+              <img src="#" alt="Gallery 8" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wedding Details Section -->
+      <section id="details" class="py-20 snap-start">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2
+              class="font-playfair text-4xl md:text-5xl font-bold text-brown-800 mb-4">
+              Informasi Pernikahan
+            </h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <!-- Countdown Timer -->
+            <div class="text-center">
+              <h3
+                class="font-playfair text-3xl font-semibold text-brown-800 mb-8">
+                Hitung Mundur Pernikahan
+              </h3>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div
+                  class="countdown-item bg-white/80 rounded-lg p-6 text-center shadow-lg backdrop-blur-sm">
+                  <div
+                    id="days"
+                    class="countdown-number text-4xl lg:text-5xl font-bold text-gold font-playfair py-2">
+                    00
+                  </div>
+                  <div
+                    class="countdown-label text-brown-600 uppercase tracking-wide text-sm font-medium">
+                    Hari
+                  </div>
+                </div>
+                <div
+                  class="countdown-item bg-white/80 rounded-lg p-6 text-center shadow-lg backdrop-blur-sm">
+                  <div
+                    id="hours"
+                    class="countdown-number text-4xl lg:text-5xl font-bold text-gold font-playfair py-2">
+                    00
+                  </div>
+                  <div
+                    class="countdown-label text-brown-600 uppercase tracking-wide text-sm font-medium">
+                    Jam
+                  </div>
+                </div>
+                <div
+                  class="countdown-item bg-white/80 rounded-lg p-6 text-center shadow-lg backdrop-blur-sm">
+                  <div
+                    id="minutes"
+                    class="countdown-number text-4xl lg:text-5xl font-bold text-gold font-playfair py-2">
+                    00
+                  </div>
+                  <div
+                    class="countdown-label text-brown-600 uppercase tracking-wide text-sm font-medium">
+                    Menit
+                  </div>
+                </div>
+                <div
+                  class="countdown-item bg-white/80 rounded-lg p-6 text-center shadow-lg backdrop-blur-sm">
+                  <div
+                    id="seconds"
+                    class="countdown-number text-4xl lg:text-5xl font-bold text-gold font-playfair py-2">
+                    00
+                  </div>
+                  <div
+                    class="countdown-label text-brown-600 uppercase tracking-wide text-sm font-medium">
+                    detik
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center text-pretty">
+              <h3
+                class="font-playfair text-3xl font-semibold text-brown-800 mb-8">
+                Lokasi Pernikahan
+              </h3>
+              <div class="bg-white/50 rounded-lg p-6 shadow-lg mb-8">
+                <h4
+                  class="font-playfair text-2xl font-semibold text-brown-800 mb-4 text-pretty">
+                  Khotbah Pernikahan - Balai Kerajaan Saksi-saksi Yehuwa
+                </h4>
+                <div class="text-gold text-xl font-medium mb-2">
+                  November 29, 2025
+                </div>
+                <div class="text-brown-600">
+                  15:00 WIT (Indonesia Eastern Time)
+                  <div class="mt-3">
+                    <a
+                      rel="noopener"
+                      href="https://maps.google.com/?q=Kingdom+Hall+of+Jehovah's+Witnesses+timika"
+                      target="_blank"
+                      class="inline-block border text-brown-600 border-gold hover:bg-gold/90 px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 my-4">
+                      <i class="fas fa-map-marker-alt mr-2"></i>
+                      Lihat di Google Maps
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white/50 rounded-lg p-6 shadow-lg">
+                <h4
+                  class="font-playfair text-2xl font-semibold text-brown-800 mb-4 text-pretty">
+                  Resepsi Pernikahan - Hotel Cendrawasih 66
+                </h4>
+                <div class="text-gold text-xl font-medium mb-2">
+                  November 29, 2025
+                </div>
+                <div class="text-brown-600">
+                  18:00 WIT (Indonesia Eastern Time)
+                  <div class="mt-3">
+                    <!-- <p>Lokasi Resepsi Pernikahan</p> -->
+                    <a
+                      rel="noopener"
+                      href="https://maps.google.com/?q=Hotel+Cendrawasih+66+Timika"
+                      target="_blank"
+                      class="inline-block border text-brown-600 border-gold hover:bg-gold/90 px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105">
+                      <i class="fas fa-map-marker-alt mr-2"></i>
+                      Lihat di Google Maps
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <!-- <div class="text-center">
+              <h3
+                class="font-playfair text-3xl font-semibold text-brown-800 mb-8">
+                Lokasi Khotbah Pernikahan
+              </h3>
+              <div class="bg-white/50 rounded-lg p-6 shadow-lg mb-6">
+                <h4
+                  class="font-playfair text-2xl font-semibold text-brown-800 mb-4 text-pretty">
+                  Balai Kerajaan Saksi-saksi Yehuwa
+                </h4>
+                <p class="text-brown-600 mb-4">Timika, Papua, Indonesia</p>
+                <a
+                  rel="noopener"
+                  href="https://maps.google.com/?q=Kingdom+Hall+of+Jehovah's+Witnesses+timika"
+                  target="_blank"
+                  class="inline-block border text-brown-600 border-gold hover:bg-gold/90 px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 my-4">
+                  <i class="fas fa-map-marker-alt mr-2"></i>
+                  Lihat di Google Maps
+                </a>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.291445560852!2d136.88635367476445!3d-4.541466695433014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x682377d58215dd0d%3A0xfe95c0b917039411!2sKingdom%20Hall%20of%20Jehovah&#39;s%20Witnesses!5e0!3m2!1sen!2sid!4v1759308899983!5m2!1sen!2sid"
+                  class="aspect-video text-center"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div> -->
+
+            <!-- Embedded Google Map -->
+            <!-- <div class="rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.161435197645!2d136.88833172433078!3d-4.541460162644592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x682377d58215dd0d%3A0xfe95c0b917039411!2sKingdom%20Hall%20of%20Jehovah&#39;s%20Witnesses!5e0!3m2!1sen!2sid!4v1759307428748!5m2!1sen!2sid"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div> -->
+
+            <!-- RESEPSI PERNIKAHAN  -->
+            <!-- <div class="text-center">
+              <h3
+                class="font-playfair text-3xl font-semibold text-brown-800 mb-8">
+                Lokasi Resepsi Pernikahan
+              </h3>
+              <div class="bg-white/50 rounded-lg p-6 shadow-lg mb-6">
+                <h4
+                  class="font-playfair text-2xl font-semibold text-brown-800 mb-4">
+                  Hotel Cendrawasih 66
+                </h4>
+                <p class="text-brown-600 mb-4">Timika, Papua, Indonesia</p>
+                <a
+                  rel="noopener"
+                  href="https://maps.google.com/?q=Hotel+Cendrawasih+66+Timika"
+                  target="_blank"
+                  class="inline-block border text-brown-600 border-gold hover:bg-gold/90 px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105">
+                  <i class="fas fa-map-marker-alt mr-2"></i>
+                  Lihat di Google Maps
+                </a>
+              </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP Section -->
+      <section id="rsvp" class="py-20 bg-white/30 snap-start">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2
+              class="font-playfair text-4xl md:text-5xl font-bold text-brown-800 mb-4">
+              RSVP
+            </h2>
+            <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+            <p class="text-brown-600 max-w-2xl mx-auto">
+              Kehadiran anda membuat acara kami semakin berarti beritahu kami
+              jika anda dan keluarga akan hadir!
+            </p>
+          </div>
+
+          <div class="max-w-2xl mx-auto">
+            <form id="rsvpForm" class="bg-white/50 rounded-lg p-8 shadow-lg">
+              <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-brown-700 font-medium mb-2">
+                    Nama Lengkap *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full text-zinc-700 px-4 py-3 rounded-lg border border-brown-300 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors"
+                    placeholder="Nama Lengkap Anda" />
+                </div>
+                <!-- <div>
+                  <label
+                    for="email"
+                    class="block text-brown-700 font-medium mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-lg border border-brown-300 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors text-zinc-700"
+                    placeholder="your.email@example.com" />
+                </div> -->
+              </div>
+
+              <div class="mb-6">
+                <label class="block text-brown-700 font-medium mb-3">
+                  Apakah Anda Datang? *
+                </label>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input
+                      type="radio"
+                      name="attendance"
+                      value="yes"
+                      class="mr-3 text-gold" />
+                    <span class="text-brown-600"
+                      >Ya, Saya/Kami akan datang</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="radio"
+                      name="attendance"
+                      value="no"
+                      class="mr-3 text-gold" />
+                    <span class="text-brown-600"
+                      >Maaf, Saya/Kami tidak bisa datang</span
+                    >
+                  </label>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="guests"
+                  class="block text-brown-700 font-medium mb-2">
+                  jumlah orang
+                </label>
+                <select
+                  id="guests"
+                  name="guests"
+                  class="form-input w-full px-4 py-3 rounded-lg border border-brown-300 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors text-zinc-700">
+                  <option value="1">1 Orang</option>
+                  <option value="2">2 Orang</option>
+                  <option value="3">3 Orang</option>
+                  <option value="4">4 Orang</option>
+                  <option value="5">5+ Orang</option>
+                </select>
+              </div>
+
+              <!-- <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-brown-700 font-medium mb-2">
+                  Pesan untuk Pengantin
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="form-textarea w-full px-4 py-3 rounded-lg border border-brown-300 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors resize-none text-zinc-700"
+                  placeholder="Kata-kata untuk pengantin"></textarea>
+              </div> -->
+
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="btn-primary border border-gold hover:bg-gold/90 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  Kirim RSVP
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wedding Wishes Section -->
+      <section id="wishes" class="py-20 snap-start">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2
+              class="font-playfair text-4xl md:text-5xl font-bold text-brown-800 mb-4">
+              Pesan untuk Pengantin
+            </h2>
+            <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+            <p class="text-brown-600 max-w-2xl mx-auto text-pretty">
+              Ungkapkan perasaan kalian dan harapan kalian untuk kami melalui
+              kata-kata. Itu sangat berarti buat kami
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <!-- Wishes Form -->
+            <div>
+              <h3
+                class="font-playfair text-2xl font-semibold text-brown-800 mb-6">
+                Pesan & Harapan untuk Pengantin
+              </h3>
+              <form
+                id="wishesForm"
+                class="bg-white/50 rounded-lg p-6 shadow-lg">
+                <div class="mb-4">
+                  <label
+                    for="wishName"
+                    class="block text-brown-700 font-medium mb-2">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="wishName"
+                    name="wishName"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-lg border border-brown-300 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors text-zinc-700"
+                    placeholder="Your name" />
+                </div>
+
+                <div class="mb-6">
+                  <label
+                    for="wish"
+                    class="block text-brown-700 font-medium mb-2">
+                    Your Wishes *
+                  </label>
+                  <textarea
+                    id="wish"
+                    name="wish"
+                    rows="4"
+                    required
+                    class="form-textarea w-full px-4 py-3 rounded-lg border border-brown-300 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors resize-none text-zinc-700"
+                    placeholder="Sampaikan harapan kalian untuk pengantin"></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn-primary border border-gold hover:bg-gold/90 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg w-full">
+                  <i class="fas fa-heart mr-2"></i>
+                  Kirim Pesan
+                </button>
+              </form>
+            </div>
+
+            <!-- Display Wishes -->
+            <div>
+              <h3
+                class="font-playfair text-2xl font-semibold text-brown-800 mb-6">
+                Pesan & Harapan dari kalian
+              </h3>
+              <div
+                id="wishesDisplay"
+                class="space-y-4 max-h-96 overflow-y-auto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quote Section -->
+      <section class="py-20 bg-white/30 snap-start">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2
+              class="font-playfair text-4xl md:text-5xl font-bold text-brown-800 mb-4">
+              Link Zoom
+            </h2>
+            <div class="flex flex-col text-center gap-2">
+              <p>ID : 12345678</p>
+              <p>Password : 876543321</p>
+              <p>Link : <a href="#">ini link zoom</a></p>
+            </div>
+            <!-- <blockquote
+              class="font-playfair text-2xl md:text-3xl text-brown-800 leading-relaxed mb-8">
+              Love is not about finding the perfect person, but learning to see
+              an imperfect person perfectly. It's about growing together,
+              supporting each other's dreams, and choosing each other every
+              single day.
+            </blockquote>
+            <div class="w-24 h-1 bg-gold mx-auto mb-4"></div>
+            <cite class="text-brown-600 text-lg"
+              >— Our Promise to Each Other</cite
+            > -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Thank You Section -->
+      <section class="py-20 snap-start">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2
+              class="font-playfair text-4xl md:text-5xl font-bold text-brown-800 mb-8">
+              Terima kasih
+            </h2>
+            <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+
+            <div class="bg-white/50 rounded-lg p-8 shadow-lg">
+              <p class="text-brown-700 text-lg leading-relaxed mb-6">
+                From the bottom of our hearts, we want to thank each and every
+                one of you for being part of our love story. Your presence, your
+                love, and your support mean everything to us.
+              </p>
+              <p class="text-brown-700 text-lg leading-relaxed mb-6">
+                Whether you can join us on our special day or celebrate with us
+                in spirit, know that you hold a special place in our hearts.
+                Thank you for the love, the laughter, and the memories we've
+                shared.
+              </p>
+              <p class="font-playfair text-2xl text-gold">
+                With all our love,<br />
+                Ayub & Beatriks
+              </p>
+            </div>
+
+            <div class="mt-12">
+              <div class="flex justify-center space-x-6">
+                <div
+                  class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center">
+                  <i class="fas fa-heart text-gold text-2xl"></i>
+                </div>
+                <div
+                  class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center">
+                  <i class="fas fa-ring text-gold text-2xl"></i>
+                </div>
+                <div
+                  class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center">
+                  <i class="fas fa-infinity text-gold text-2xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal rekening bank (letakkan di akhir <body>) -->
+    <div
+      id="showModal"
+      class="bank-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="bankModalTitle"
+      style="display: none">
+      <div class="bank-modal__backdrop" data-close-modal></div>
+
+      <div
+        class="bank-modal__panel transition-all duration-300 ease-out opacity-0 scale-95"
+        x-show="isOpen"
+        x-transition:enter="opacity-0 scale-95"
+        x-transition:enter-active="opacity-100 scale-100"
+        x-transition:leave="opacity-100 scale-100"
+        x-transition:leave-active="opacity-0 scale-95"
+        role="document">
+        <header class="bank-modal__header">
+          <h2 id="bankModalTitle" class="text-4xl md:text-5xl">
+            Informasi Rekening
+          </h2>
+          <button
+            class="bank-modal__close"
+            aria-label="Tutup modal"
+            data-close-modal>
+            &times;
+          </button>
+        </header>
+
+        <div class="bank-modal__body">
+          <p class="bank-modal__desc">
+            Silakan transfer ke salah satu rekening di bawah. Klik ikon salin
+            untuk menyalin nomor.
+          </p>
+
+          <ul class="bank-list">
+            <li class="bank-item">
+              <div class="bank-item__info">
+                <strong>BCA</strong>
+                <span class="bank-item__name">A.N. Nama Penerima</span>
+              </div>
+              <div class="bank-item__actions">
+                <button
+                  class="btn-toggle-mask"
+                  aria-pressed="false"
+                  title="Tampilkan/ Sembunyikan nomor">
+                  ••••••••••
+                </button>
+                <button
+                  class="btn-copy"
+                  data-account="1234567890"
+                  title="Salin nomor rekening">
+                  Salin
+                </button>
+              </div>
+            </li>
+
+            <li class="bank-item">
+              <div class="bank-item__info">
+                <strong>Mandiri</strong>
+                <span class="bank-item__name">A.N. Nama Penerima</span>
+              </div>
+              <div class="bank-item__actions">
+                <button
+                  class="btn-toggle-mask"
+                  aria-pressed="false"
+                  title="Tampilkan/ Sembunyikan nomor">
+                  ••••••••••
+                </button>
+                <button
+                  class="btn-copy"
+                  data-account="0987654321"
+                  title="Salin nomor rekening">
+                  Salin
+                </button>
+              </div>
+            </li>
+
+            <!-- Tambah item bank lain sesuai kebutuhan -->
+          </ul>
+        </div>
+
+        <footer class="bank-modal__footer">
+          <button
+            class="bank-modal__primary border border-gold"
+            data-close-modal>
+            Oke, Tutup
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>
