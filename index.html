@@ -191,7 +191,7 @@
               <div
                 class="w-64 h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/30">
                 <img
-                  src="/assets/img/IMG_4407.jpg"
+                  src="./assets/img/IMG_4407.jpg"
                   alt="Ayub Nowoeko"
                   class="w-full h-full object-cover" />
               </div>
@@ -214,7 +214,7 @@
               <div
                 class="w-64 h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/30">
                 <img
-                  src="/assets/img/IMG_4403.jpg"
+                  src="./assets/img/IMG_4403.jpg"
                   alt="Beatriks Yarangga"
                   class="w-full h-full object-cover -scale-100 scale-y-100" />
               </div>
@@ -266,56 +266,56 @@
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4346.jpg"
+                src="./assets/img/IMG_4346.jpg"
                 alt="Gallery 1"
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4355.jpg"
+                src="./assets/img/IMG_4355.jpg"
                 alt="Gallery 2"
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4358.jpg"
+                src="./assets/img/IMG_4358.jpg"
                 alt="Gallery 3"
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4371.jpg"
+                src="./assets/img/IMG_4371.jpg"
                 alt="Gallery 4"
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4373.jpg"
+                src="./assets/img/IMG_4373.jpg"
                 alt="Gallery 5"
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4399.jpg"
+                src="./assets/img/IMG_4399.jpg"
                 alt="Gallery 6"
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4439.jpg"
+                src="./assets/img/IMG_4439.jpg"
                 alt="Gallery 7"
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer gallery-item">
               <img
-                src="/assets/img/IMG_4715.jpg"
+                src="./assets/img/IMG_4715.jpg"
                 alt="Gallery 8"
                 class="w-full h-full object-bottom object-cover" />
             </div>
@@ -875,6 +875,30 @@
             Oke, Tutup
           </button>
         </footer>
+      </div>
+    </div>
+
+    <!-- Fullscreen Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal hidden">
+      <div class="gallery-modal-overlay"></div>
+      <div class="gallery-modal-content">
+        <div class="gallery-modal-header">
+          <span id="galleryClose" class="gallery-close">&times;</span>
+        </div>
+        <div class="gallery-modal-body">
+          <button id="galleryPrev" class="gallery-nav-btn gallery-nav-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <img id="modalImage" src="" alt="Gallery Image" class="gallery-modal-img">
+          <button id="galleryNext" class="gallery-nav-btn gallery-nav-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="gallery-modal-footer">
+          <div class="gallery-counter">
+            <span id="currentImageIndex">1</span> / <span id="totalImages">8</span>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -526,15 +526,88 @@ class WeddingApp {
    */
   initializeGallery() {
     const galleryItems = document.querySelectorAll(".gallery-item");
+    const modal = document.getElementById("galleryModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeModal = document.getElementById("galleryClose");
+    const prevBtn = document.getElementById("galleryPrev");
+    const nextBtn = document.getElementById("galleryNext");
+    const currentImageIndex = document.getElementById("currentImageIndex");
+    const totalImages = document.getElementById("totalImages");
+    const overlay = document.querySelector(".gallery-modal-overlay");
 
-    galleryItems.forEach((item) => {
-      item.addEventListener("click", function () {
-        // Simple zoom effect
-        this.style.transform = "scale(1.05)";
-        setTimeout(() => {
-          this.style.transform = "scale(1)";
-        }, 200);
+    // Create array of image sources and alt texts
+    const images = Array.from(galleryItems).map(item => {
+      return {
+        src: item.querySelector("img").src,
+        alt: item.querySelector("img").alt
+      };
+    });
+
+    // Update total images count
+    totalImages.textContent = images.length;
+
+    // Function to open modal with specific image
+    const openModal = (index) => {
+      if (images[index]) {
+        modalImg.src = images[index].src;
+        modalImg.alt = images[index].alt;
+        currentImageIndex.textContent = index + 1;
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+      }
+    };
+
+    // Function to navigate to next image
+    const showNext = () => {
+      const currentIndex = images.findIndex(img => img.src === modalImg.src);
+      const nextIndex = (currentIndex + 1) % images.length;
+      openModal(nextIndex);
+    };
+
+    // Function to navigate to previous image
+    const showPrev = () => {
+      const currentIndex = images.findIndex(img => img.src === modalImg.src);
+      const prevIndex = (currentIndex - 1 + images.length) % images.length;
+      openModal(prevIndex);
+    };
+
+    // Event listeners for gallery items
+    galleryItems.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        openModal(index);
       });
+    });
+
+    // Close modal
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      document.body.style.overflow = ""; // Re-enable scrolling
+    });
+
+    // Close modal when clicking on overlay
+    overlay.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      document.body.style.overflow = ""; // Re-enable scrolling
+    });
+
+    // Next button
+    nextBtn.addEventListener("click", showNext);
+
+    // Previous button
+    prevBtn.addEventListener("click", showPrev);
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("hidden")) { // Only when modal is open
+        if (e.key === "Escape") {
+          modal.classList.add("hidden");
+          document.body.style.overflow = ""; // Re-enable scrolling
+        } else if (e.key === "ArrowRight") {
+          showNext();
+        } else if (e.key === "ArrowLeft") {
+          showPrev();
+        }
+      }
     });
   }
 
