@@ -1,0 +1,27 @@
+{
+  "name": "wedding-invitation",
+  "version": "1.0.0",
+  "description": "An elegant, responsive wedding invitation website for Ayub Nowoeko and Beatriks Yarangga's wedding on November 29, 2025.",
+  "main": "optimize-images.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loardiSteve/wedding-invitation-ayub-beatriks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loardiSteve/wedding-invitation-ayub-beatriks/issues"
+  },
+  "homepage": "https://github.com/loardiSteve/wedding-invitation-ayub-beatriks#readme",
+  "dependencies": {
+    "imagemin": "^9.0.1",
+    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "sharp": "^0.34.4"
+  }
+}
