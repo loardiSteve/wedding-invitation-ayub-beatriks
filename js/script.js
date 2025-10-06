@@ -536,45 +536,104 @@ class WeddingApp {
     const overlay = document.querySelector(".gallery-modal-overlay");
 
     // Create array of image sources and alt texts
-    const images = Array.from(galleryItems).map(item => {
+    const images = Array.from(galleryItems).map((item) => {
       return {
         src: item.querySelector("img").src,
-        alt: item.querySelector("img").alt
+        alt: item.querySelector("img").alt,
       };
     });
 
     // Update total images count
     totalImages.textContent = images.length;
 
-    // Function to open modal with specific image
-    const openModal = (index) => {
+    // Function to preload image
+    const preloadImage = (src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    };
+
+    // Function to open modal with fade transition
+    const openModalWithTransition = (index) => {
       if (images[index]) {
-        modalImg.src = images[index].src;
-        modalImg.alt = images[index].alt;
-        currentImageIndex.textContent = index + 1;
-        modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
+        // If modal is already open, fade out the current image first
+        if (!modal.classList.contains("hidden")) {
+          // Add fade-out class to current image
+          modalImg.classList.add("img-fade-out");
+
+          // Wait for fade-out transition to complete before changing source
+          setTimeout(async () => {
+            try {
+              // Preload the new image to avoid layout shift
+              await preloadImage(images[index].src);
+
+              modalImg.src = images[index].src;
+              modalImg.alt = images[index].alt;
+              currentImageIndex.textContent = index + 1;
+
+              // Remove fade-out and add fade-in class
+              modalImg.classList.remove("img-fade-out");
+              modalImg.classList.add("img-fade-in");
+
+              // Remove fade-in class after transition completes to reset for next transition
+              setTimeout(() => {
+                modalImg.classList.remove("img-fade-in");
+              }, 300);
+            } catch (error) {
+              console.error("Error preloading image:", error);
+              // Fallback without preload if there's an error
+              modalImg.src = images[index].src;
+              modalImg.alt = images[index].alt;
+              currentImageIndex.textContent = index + 1;
+
+              modalImg.classList.remove("img-fade-out");
+              modalImg.classList.add("img-fade-in");
+
+              setTimeout(() => {
+                modalImg.classList.remove("img-fade-in");
+              }, 300);
+            }
+          }, 150); // Half of the transition time
+        } else {
+          // If modal is not open yet, just open and fade in
+          modalImg.src = images[index].src;
+          modalImg.alt = images[index].alt;
+          currentImageIndex.textContent = index + 1;
+          modal.classList.remove("hidden");
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+
+          // Add fade-in class for initial show
+          modalImg.classList.add("img-fade-in");
+
+          // Remove fade-in class after transition completes to reset for next transition
+          setTimeout(() => {
+            modalImg.classList.remove("img-fade-in");
+          }, 300);
+        }
       }
     };
 
     // Function to navigate to next image
     const showNext = () => {
-      const currentIndex = images.findIndex(img => img.src === modalImg.src);
+      const currentIndex = images.findIndex((img) => img.src === modalImg.src);
       const nextIndex = (currentIndex + 1) % images.length;
-      openModal(nextIndex);
+      openModalWithTransition(nextIndex);
     };
 
     // Function to navigate to previous image
     const showPrev = () => {
-      const currentIndex = images.findIndex(img => img.src === modalImg.src);
+      const currentIndex = images.findIndex((img) => img.src === modalImg.src);
       const prevIndex = (currentIndex - 1 + images.length) % images.length;
-      openModal(prevIndex);
+      openModalWithTransition(prevIndex);
     };
 
     // Event listeners for gallery items
     galleryItems.forEach((item, index) => {
       item.addEventListener("click", () => {
-        openModal(index);
+        openModalWithTransition(index);
       });
     });
 
@@ -598,7 +657,8 @@ class WeddingApp {
 
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
-      if (!modal.classList.contains("hidden")) { // Only when modal is open
+      if (!modal.classList.contains("hidden")) {
+        // Only when modal is open
         if (e.key === "Escape") {
           modal.classList.add("hidden");
           document.body.style.overflow = ""; // Re-enable scrolling

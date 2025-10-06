@@ -1034,7 +1034,6 @@ body {
   position: relative;
   width: 100%;
   max-width: 90%;
-  max-height: 90%;
   display: flex;
   flex-direction: column;
 }
@@ -1071,6 +1070,7 @@ body {
   align-items: center;
   justify-content: center;
   flex: 1;
+  min-height: 60vh;
 }
 
 .gallery-modal-img {
@@ -1126,6 +1126,19 @@ body {
   border-radius: 20px;
 }
 
+/* Fade transition for gallery modal */
+.gallery-modal-img {
+  transition: opacity 0.3s ease;
+}
+
+.gallery-modal-img.img-fade-out {
+  opacity: 0;
+}
+
+.gallery-modal-img.img-fade-in {
+  opacity: 1;
+}
+
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .container {
@@ -1140,17 +1153,17 @@ body {
   .quote-mark {
     font-size: 2.5rem;
   }
-  
+
   .gallery-nav-btn {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
   }
-  
+
   .gallery-nav-prev {
     left: 10px;
   }
-  
+
   .gallery-nav-next {
     right: 10px;
   }
